@@ -80,6 +80,7 @@ function Player() {
     <div className="fixed-bottom px-3 py-1 shadow player bg-light w-100 bg-dark text-gray">
       <div className="d-flex justify-content-between align-items-center ">
         <div className="d-flex align-items-center ps-2 song-details">
+          <img src="https://play-lh.googleusercontent.com/aCTAc2CKkYvUqhkPJkJ_MLSDrJZeJKXPhNlbbnWOtbAo6OzPyjMY_bQAR09OgjFnxMwY" alt="player-image" className="player-image pe-2"/>
           <div>
             <h1 className="fs-5">{currentSong?.title}</h1>
             <h1 className="text-secondary fs-5">
