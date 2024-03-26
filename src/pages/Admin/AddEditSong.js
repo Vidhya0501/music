@@ -100,19 +100,20 @@ function AddEditSong() {
   }, [user]);
 
   return (
-    <div className="bg-dark">
-      <div className="d-flex align-items-center gap-5">
+   
+      <div className="d-flex flex-column bg-dark">
+      <div className="d-flex p-2 mt-2">
       <FontAwesomeIcon
                 icon={faArrowLeft}
                 onClick={() => {
                   navigate("/admin");
                 }}
+                className="fs-2 ps-2"
               />
-        <h1 className="fd-5">{songId ? "Edit" : "Add"} Song</h1>
+        <h1 className="fs-3 ps-2">{songId ? "Edit" : "Add"} Song</h1>
       </div>
 
-      <div className="d-flex align-items-center justify-content-center centered ">
-        <div className="d-flex flex-column gap-3 mt-5">
+        <div className="d-flex flex-column gap-3 mt-1 w-25 ps-3 mb-5">
           <input
             type="text"
             placeholder="Title"
@@ -120,6 +121,7 @@ function AddEditSong() {
             onChange={(e) => {
               setSong({ ...song, title: e.target.value });
             }}
+            className="p-2 mt-5 rounded"
           />
           <input
             type="text"
@@ -128,6 +130,7 @@ function AddEditSong() {
             onChange={(e) => {
               setSong({ ...song, artist: e.target.value });
             }}
+            className="p-2 rounded"
           />
           <input
             type="text"
@@ -136,6 +139,7 @@ function AddEditSong() {
             onChange={(e) => {
               setSong({ ...song, album: e.target.value });
             }}
+            className="p-2 rounded"
           />
           <input
             type="text"
@@ -144,6 +148,7 @@ function AddEditSong() {
             onChange={(e) => {
               setSong({ ...song, year: e.target.value });
             }}
+            className="p-2 rounded"
           />
           <input
             type="text"
@@ -152,6 +157,7 @@ function AddEditSong() {
             onChange={(e) => {
               setSong({ ...song, duration: e.target.value });
             }}
+            className="p-2 rounded"
           />
           <FileUploader
             handleChange={handleChange}
@@ -162,14 +168,14 @@ function AddEditSong() {
           <div className="d-flex justify-content-end">
             {songId && songId !== "" ? (
               <button
-                className="text-white bg-orange py-2 px-10 w-100"
+                className="text-white bg-orange py-2 px-10 w-100 rounded fw-bold"
                 onClick={onEdit}
               >
                 Update
               </button>
             ) : (
               <button
-                className="text-white bg-orange py-2 px-10 w-100"
+                className="text-white bg-orange py-2 px-10 w-100 rounded fw-bold"
                 onClick={onAdd}
               >
                 Add
@@ -177,9 +183,10 @@ function AddEditSong() {
             )}
           </div>
         </div>
-
       </div>
-    </div>
+
+      
+    
   );
 }
 
